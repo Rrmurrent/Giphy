@@ -1,9 +1,93 @@
 body{
-    background-color:orangered;
-   
+    background-color:violet;
+    background-image:url(./images/cherryBlossoms.jpg); 
 };
 
-.buttons{
-    background-color:white
+.header {
+    text-align: center;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    font-size: 5vw;
+
+  }
+
+  .title{
+      margin-left: 40%;
+  }
+  .nav {
+    background: black;
+    /* margin-left: 25%; */
+    top: 0;
+    width: 100%;
+    transition:all 0.5s;
+    position: relative;
+    z-index: 1;
+  }
+  
+  body.fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+  }
+  
+ 
+  #searchBtn{
+    background-color: black;
+    color: white; 
+    height: 80%;
+    width: 20%;
+    margin-left: 40%;
+  }
+  
+.subjectButton{
+    background-color: black;
+    color: white; 
+    height: 80%;
+    width: 20%;
    
 }
+
+.buttons{
+    background-color: black;
+    color: white; 
+    height: 90%;
+    width: 20%;
+}
+
+#buttonGallery{
+    margin: 5% 10% 0 10%;
+    /* margin-le%ft1: 25%; */
+}
+
+.site-wrap {
+    max-width: 700px;
+    /* height: 15%; */
+    margin: 70px auto;
+    background: white;
+    padding: 40px;
+    text-align: justify;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+    transform: scale(0.98);
+    transition: transform 0.5s;
+    border: solid 15px black;
+  }
+
+
+.gifDiv{
+    
+    width: 100%;
+  
+}
+
+  .cardImage{
+    margin-left: 30%;
+    border: solid 10px black;
+    width: 200px;
+
+    
+
+  }

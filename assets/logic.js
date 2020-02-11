@@ -18,7 +18,7 @@ var apiKey = '8rWTYSGMgDTrwqndYxIEjk7QT2CSpo0D&limit=10'
 for (var i=0;  i < topicArray.length; i++) {
   var button = document.createElement('button');
   $(button).attr('id', topicArray[i]);
-  $(button).attr('class', 'buttons btn btn-large');
+  $(button).attr('class', 'subjectButton');
   $(button).html(topicArray[i]);
   $(button).appendTo(buttonGallery);
 };
@@ -34,7 +34,7 @@ var searchBtn = $('#searchBtn')
                 for (var i = 0; i < topicArray.length; i++) {
                     var button = document.createElement('button');
                     $(button).attr('id', topicArray[i]);
-                    $(button).attr('class', 'buttons btn btn-large');
+                    $(button).attr('class', 'buttons');
                     $(button).html(topicArray[i]);
                     $(button).appendTo(buttonGallery);
                 };
@@ -44,7 +44,6 @@ var searchBtn = $('#searchBtn')
 
     $(document).on('click', 'img', function(){
       console.log('gif clicked')
-      var source = $(this).attr('src');
       var static = $(this).attr('static');
       var moving = $(this).attr('moving');
       var status = $(this).attr('status');
@@ -63,7 +62,7 @@ var searchBtn = $('#searchBtn')
       console.log('This Button Works!')
       
       var gifName = $(this).attr('id');
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifName + '&api_key=' + apiKey + '&limit=10';
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifName + '&api_key=' + apiKey + '&limit=5';
       
       $.ajax({
           url: queryURL,
@@ -71,8 +70,8 @@ var searchBtn = $('#searchBtn')
       }).then(function(response){
           var results = response.data;
           for(var i = 0;  i < results.length; i++){
-              var bigDiv = document.createElement('div');
-                  $(bigDiv).attr('class', 'gifDiv card');
+              var gifDiv = document.createElement('div');
+                  $(gifDiv).attr('class', 'gifDiv');
               var imgSrc = results[i].images.fixed_height.url;
               var imgStat = results[i].images.fixed_height_still.url;
               var gifImg = document.createElement('img');
@@ -81,13 +80,13 @@ var searchBtn = $('#searchBtn')
                   $(gifImg).attr('moving', imgSrc);
                   $(gifImg).attr('status', 'static');
                   $(gifImg).attr('id', 'gif');
-                  $(gifImg).attr('class', 'card-img-top');
+                  $(gifImg).attr('class', 'cardImage');
               var rating = document.createElement('div');
                   $(rating).html('Rated: ' + results[i].rating);
                   $(rating).attr('class', 'card-text')
-                  $(gifImg).appendTo(bigDiv);
-                  $(rating).appendTo(bigDiv);
-                  $(bigDiv).prependTo(mainDiv);
+                  $(gifImg).appendTo(gifDiv);
+                  $(rating).appendTo(gifDiv);
+                  $(gifDiv).prependTo(mainDiv);
           }
       })
   });
