@@ -62,7 +62,7 @@ var searchBtn = $('#searchBtn')
       console.log('This Button Works!')
       
       var gifName = $(this).attr('id');
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifName + '&api_key=' + apiKey + '&limit=5';
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifName + '&api_key=' + apiKey + '&limit=1';
       
       $.ajax({
           url: queryURL,
